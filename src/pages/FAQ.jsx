@@ -3,7 +3,7 @@ import Icon from "../components/Icon";
 
 const groups = [
   { id: "agritech", icon: "analytics", label: "Agritech Services", questions: ["How does the soil analysis workflow operate?", "Can farmers use the platform without a smartphone?", "How are field recommendations generated?"] },
-  { id: "market", icon: "market", label: "Market Access", questions: ["How are buyers verified?", "Does AgriConnect support aggregation?", "Can farmers negotiate prices?"] },
+  { id: "market", icon: "market", label: "Market Access", questions: ["How are buyers verified?", "Does AgriTech Ghana support aggregation?", "Can farmers negotiate prices?"] },
   { id: "training", icon: "book", label: "Farmer Training", questions: ["Are training modules online or field-based?", "Can agents run community workshops?", "Is certification available?"] },
   { id: "security", icon: "shield", label: "Trust & Security", questions: ["How are payments protected?", "Who can access farmer data?", "How are disputes handled?"] },
 ];
@@ -24,7 +24,7 @@ function FAQ() {
   const activeGroup = groups.find((g) => g.id === active) || groups[0];
   return (
     <>
-      <section className="simple-hero page-offset faq-page-hero"><span className="badge">Support Center</span><h1>Help and advisory support.</h1><p>Everything you need to understand AgriConnect services, market access, training, and operational support.</p><div className="search-box"><Icon name="search" /><input placeholder="Search for answers" /></div></section>
+      <section className="simple-hero page-offset faq-page-hero"><span className="badge">Support Center</span><h1>Help and advisory support.</h1><p>Everything you need to understand AgriTech Ghana services, market access, training, and operational support.</p><div className="search-box"><Icon name="search" /><input placeholder="Search for answers" /></div></section>
       <section className="section faq-layout"><aside className="faq-sidebar"><span className="eyebrow">Topics</span>{groups.map((g) => <button key={g.id} className={active === g.id ? "active" : ""} type="button" onClick={() => setActive(g.id)}><Icon name={g.icon} size={18} />{g.label}</button>)}</aside><div className="faq-main"><h2><Icon name={activeGroup.icon} />{activeGroup.label}</h2>{activeGroup.questions.map((q) => <FaqItem key={q} question={q} />)}</div></section>
       <section className="section cta-section"><div className="cta-panel"><h2>Still have questions?</h2><p>Our advisory team can help you understand the right solution for your farmers, buyers, or agribusiness programme.</p><a href="/contact" className="btn btn-primary">Contact Support</a></div></section>
     </>

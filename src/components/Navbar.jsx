@@ -1,92 +1,77 @@
-import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import Icon from "./Icon";
+import { useEffect, useState } from "react";
+import logoMark from "../assets/branding/agritech-mark-transparent.png";
+
+const navItems = [
+  { label: "About Us", path: "/about" },
+  { label: "Solutions", path: "/solutions" },
+  { label: "Marketplace", path: "/marketplace" },
+  { label: "Impact", path: "/impact" },
+  { label: "Training", path: "/training" },
+  { label: "Team", path: "/team" },
+  { label: "News", path: "/news" },
+  { label: "FAQ", path: "/faq" },
+  { label: "Contact Us", path: "/contact" },
+];
 
 function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
-
-  const navItems = [
-    { label: "About Us", path: "/about" },
-    { label: "Solutions", path: "/solutions" },
-    { label: "Marketplace", path: "/marketplace" },
-    { label: "Impact", path: "/impact" },
-    { label: "Training", path: "/training" },
-    { label: "Team", path: "/team" },
-    { label: "News", path: "/news" },
-    { label: "FAQ", path: "/faq" },
-    { label: "Contact Us", path: "/contact" },
-  ];
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 48);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [pathname]);
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
+  useEffect(() => setOpen(false), [pathname]);
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location.pathname]);
-
-  const isHome = location.pathname === "/";
+  const className = [
+    "navbar",
+    isHome ? "navbar-home" : "",
+    scrolled || !isHome ? "navbar-scrolled" : "",
+    open ? "navbar-open" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
-    <header
-      className={[
-        "site-navbar",
-        isHome ? "site-navbar-home" : "",
-        isScrolled || !isHome ? "site-navbar-scrolled" : "",
-        isOpen ? "site-navbar-open" : "",
-      ]
-        .filter(Boolean)
-        .join(" ")}
-    >
-      <NavLink to="/" className="site-logo" aria-label="AgriConnect home">
-        <span className="site-logo-mark">
-          <Icon name="leaf" size={18} />
-        </span>
-        <span>AgriConnect</span>
+    <header className={className}>
+      <NavLink to="/" className="brand" aria-label="AgriTech Ghana home">
+        <img src={logoMark} alt="" className="brand-logo-img" />
+        <span>AgriTech Ghana</span>
       </NavLink>
 
-      <nav className="site-nav-links" aria-label="Primary navigation">
+      <nav className="nav-links" aria-label="Main navigation">
         {navItems.map((item) => (
           <NavLink
             key={item.path}
             to={item.path}
-            className={({ isActive }) =>
-              isActive ? "site-nav-link active" : "site-nav-link"
-            }
+            className={({ isActive }) => (isActive ? "nav-active" : undefined)}
           >
             {item.label}
           </NavLink>
         ))}
       </nav>
 
-      <div className="site-nav-actions">
-        <NavLink to="/login" className="site-login">
-          Login
-        </NavLink>
-        <NavLink to="/signup" className="site-signup">
-          Sign Up
-        </NavLink>
+      <div className="nav-actions">
+        <NavLink to="/login" className="btn-login">Login</NavLink>
+        <NavLink to="/signup" className="btn-signup">Sign Up</NavLink>
       </div>
 
       <button
         type="button"
-        className="mobile-menu-btn"
-        aria-label={isOpen ? "Close menu" : "Open menu"}
-        aria-expanded={isOpen}
-        onClick={() => setIsOpen((current) => !current)}
+        className="mobile-menu-toggle"
+        aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={open}
+        onClick={() => setOpen((state) => !state)}
       >
-        <span></span>
-        <span></span>
-        <span></span>
+        <span />
+        <span />
+        <span />
       </button>
 
       <div className="mobile-menu-panel">
@@ -95,22 +80,15 @@ function Navbar() {
             <NavLink
               key={item.path}
               to={item.path}
-              className={({ isActive }) =>
-                isActive ? "mobile-menu-link active" : "mobile-menu-link"
-              }
+              className={({ isActive }) => (isActive ? "mobile-link active" : "mobile-link")}
             >
               {item.label}
             </NavLink>
           ))}
         </nav>
-
         <div className="mobile-menu-actions">
-          <NavLink to="/login" className="mobile-login">
-            Login
-          </NavLink>
-          <NavLink to="/signup" className="mobile-signup">
-            Sign Up
-          </NavLink>
+          <NavLink to="/login" className="mobile-login">Login</NavLink>
+          <NavLink to="/signup" className="mobile-signup">Sign Up</NavLink>
         </div>
       </div>
     </header>

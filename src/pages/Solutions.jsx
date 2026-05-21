@@ -20,7 +20,7 @@ function Solutions() {
         <div className="page-hero-copy">
           <span className="badge">Services Ecosystem</span>
           <h1>Complete Farm <span>Empowerment</span></h1>
-          <p>From production support to buyer access, AgriConnect provides a practical service suite for climate-smart agribusiness growth.</p>
+          <p>From production support to buyer access, AgriTech Ghana provides a practical service suite for climate-smart agribusiness growth.</p>
           <div className="action-row">
             <a href="#pillars" className="btn btn-primary">Explore Services</a>
             <a href="/contact" className="btn btn-outline">Talk to Sales</a>

@@ -59,7 +59,7 @@ function Home() {
             <span className="eyebrow">Our Ecosystem</span>
             <h2>Empowering every stakeholder.</h2>
           </div>
-          <p>AgriConnect creates a trusted loop between production, advisory, aggregation, finance, logistics, and market access.</p>
+          <p>AgriTech Ghana creates a trusted loop between production, advisory, aggregation, finance, logistics, and market access.</p>
         </div>
         <div className="card-grid three">
           {stakeholderCards.map((card) => (
@@ -123,7 +123,7 @@ function Home() {
         <div className="impact-copy">
           <span className="eyebrow light">Our Impact</span>
           <h2>Empowering 50,000+ smallholder farmers by 2026.</h2>
-          <p>AgriConnect connects farmers to markets, advisory services, traceability tools, and climate-smart support systems across Africa.</p>
+          <p>AgriTech Ghana connects farmers to markets, advisory services, traceability tools, and climate-smart support systems across Africa.</p>
           <a href="/impact" className="btn btn-primary">Read Impact Report</a>
         </div>
         <div className="photo-mosaic">

@@ -29,7 +29,7 @@ function Impact() {
         <div className="stats-grid">{metrics.map((m) => <div className="stat-card" key={m.label}><strong>{m.value}</strong><span>{m.label}</span></div>)}</div>
       </section>
       <section className="section muted-section">
-        <div className="section-center"><span className="eyebrow">Impact Pillars</span><h2>What AgriConnect improves</h2><p>Impact is designed around practical outcomes that matter to farmers, buyers, partners, and communities.</p></div>
+        <div className="section-center"><span className="eyebrow">Impact Pillars</span><h2>What AgriTech Ghana improves</h2><p>Impact is designed around practical outcomes that matter to farmers, buyers, partners, and communities.</p></div>
         <div className="card-grid three compact-cards">{impactPillars.map((item) => <article key={item.title}><Icon name={item.icon} /><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
       </section>
       <section className="section split-feature dark-section">

@@ -1,24 +1,28 @@
 import { NavLink } from "react-router-dom";
-import Icon from "./Icon";
+import logoMark from "../assets/branding/agritech-mark-transparent.png";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-brand">
-          <div className="footer-logo"><span className="brand-mark"><Icon name="leaf" size={18} /></span>AgriConnect</div>
+          <div className="footer-logo">
+            <img src={logoMark} alt="" className="footer-logo-img" />
+            <span>AgriTech Ghana</span>
+          </div>
           <p>
-            Building the digital infrastructure for trusted, climate-smart agriculture across Africa.
+            Building digital infrastructure for trusted, climate-smart agriculture across Ghana.
           </p>
           <div className="footer-socials" aria-label="Social links">
-            <a href="#x">X</a>
-            <a href="#linkedin">in</a>
-            <a href="#mail"><Icon name="mail" size={16} /></a>
+            <a href="https://www.facebook.com/search/top?q=Agritech%20Ghana" target="_blank" rel="noreferrer" aria-label="Facebook">Facebook</a>
+            <a href="https://www.instagram.com/agritech.gh" target="_blank" rel="noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://www.threads.net/@agritech.gh" target="_blank" rel="noreferrer" aria-label="Threads">Threads</a>
           </div>
         </div>
 
         <div className="footer-col">
           <h4>Platform</h4>
+          <NavLink to="/about">About Us</NavLink>
           <NavLink to="/solutions">Solutions</NavLink>
           <NavLink to="/marketplace">Marketplace</NavLink>
           <NavLink to="/impact">Impact</NavLink>
@@ -27,22 +31,23 @@ function Footer() {
 
         <div className="footer-col">
           <h4>Company</h4>
-          <NavLink to="/about">About Us</NavLink>
           <NavLink to="/team">Team</NavLink>
           <NavLink to="/news">News</NavLink>
+          <NavLink to="/faq">FAQ</NavLink>
           <NavLink to="/contact">Contact Us</NavLink>
         </div>
 
         <div className="footer-col">
           <h4>Contact</h4>
-          <a href="mailto:hello@agriconnect.io">hello@agriconnect.io</a>
-          <a href="tel:+233245000000">+233 24 500 0000</a>
-          <span>Independence Avenue, Ridge, Accra</span>
+          <a href="tel:+233537333237">0537333237</a>
+          <a href="https://www.facebook.com/search/top?q=Agritech%20Ghana" target="_blank" rel="noreferrer">Facebook: Agritech Ghana</a>
+          <a href="https://www.instagram.com/agritech.gh" target="_blank" rel="noreferrer">Instagram: agritech.gh</a>
+          <a href="https://www.threads.net/@agritech.gh" target="_blank" rel="noreferrer">Threads: agritech.gh</a>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <span>© 2026 AgriConnect Technologies Ltd. All rights reserved.</span>
+        <span>© 2026 AgriTech Ghana. All rights reserved.</span>
         <div>
           <a href="#privacy">Privacy</a>
           <a href="#terms">Terms</a>

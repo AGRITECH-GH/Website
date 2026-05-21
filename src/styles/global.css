@@ -1086,256 +1086,137 @@ h3 { font-size: 20px; }
   }
 }
 
-
 /* ============================================================
-   RESPONSIVE NAVBAR FIX
+   BRAND UPDATE — AgriTech Ghana logo + mobile navigation
    ============================================================ */
-
-.site-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: var(--nav-h, 72px);
-  z-index: 2000;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 28px;
-  padding: 0 5%;
-  background: #ffffff;
-  color: var(--green-deep, #071b10);
-  border-bottom: 1px solid rgba(8, 27, 16, 0.08);
-  transition:
-    background 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease,
-    color 0.25s ease;
+.brand-logo-img {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 999px !important;
+  object-fit: cover !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(7,23,13,.10) !important;
+  box-shadow: 0 6px 16px rgba(7,23,13,.08) !important;
 }
 
-.site-navbar-home {
-  background: rgba(3, 18, 10, 0.28);
-  border-bottom-color: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-  backdrop-filter: blur(14px);
+.navbar-home:not(.navbar-scrolled) .brand-logo-img {
+  border-color: rgba(255,255,255,.35) !important;
+  box-shadow: 0 6px 16px rgba(0,0,0,.16) !important;
 }
 
-.site-navbar-scrolled {
-  background: #ffffff;
-  color: var(--green-deep, #071b10);
-  border-bottom-color: rgba(8, 27, 16, 0.08);
-  box-shadow: 0 10px 30px rgba(8, 27, 16, 0.08);
+.footer-logo-img {
+  width: 54px !important;
+  height: 54px !important;
+  border-radius: 999px !important;
+  object-fit: cover !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(255,255,255,.22) !important;
 }
 
-.site-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  font-weight: 800;
-  font-size: 1.22rem;
-  color: inherit;
-  text-decoration: none;
-  white-space: nowrap;
+.footer-logo span {
+  color: #ffffff !important;
 }
 
-.site-logo-mark {
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(61, 220, 107, 0.14);
-  color: var(--green-accent, #3ddc6b);
+.footer-socials a {
+  width: 38px !important;
+  height: 38px !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: uppercase !important;
 }
 
-.site-nav-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-  min-width: 0;
+/* Use the client-facing brand at a readable size across desktop */
+.brand {
+  font-size: clamp(16px, 1.5vw, 21px) !important;
+  gap: 10px !important;
 }
 
-.site-nav-link {
-  position: relative;
-  height: var(--nav-h, 72px);
-  display: inline-flex;
-  align-items: center;
-  color: inherit;
-  opacity: 0.78;
-  font-size: 0.94rem;
-  font-weight: 700;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: opacity 0.2s ease, color 0.2s ease;
+.navbar-home:not(.navbar-scrolled) .brand {
+  color: #ffffff !important;
 }
 
-.site-nav-link:hover,
-.site-nav-link.active {
-  opacity: 1;
-  color: var(--green-mid, #176434);
+.navbar-scrolled .brand,
+.navbar:not(.navbar-home) .brand {
+  color: var(--green-950) !important;
 }
 
-.site-navbar-home:not(.site-navbar-scrolled) .site-nav-link:hover,
-.site-navbar-home:not(.site-navbar-scrolled) .site-nav-link.active {
-  color: var(--green-accent, #3ddc6b);
-}
-
-.site-nav-link.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 17px;
-  height: 2px;
-  border-radius: 999px;
-  background: currentColor;
-}
-
-.site-nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.site-login,
-.site-signup {
-  min-height: 38px;
-  padding: 0 18px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  font-weight: 800;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.site-login {
-  color: inherit;
-  border: 1px solid currentColor;
-  opacity: 0.86;
-}
-
-.site-signup {
-  color: var(--green-deep, #071b10);
-  background: var(--green-accent, #3ddc6b);
-  border: 1px solid var(--green-accent, #3ddc6b);
-}
-
-.mobile-menu-btn {
-  display: none;
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  border: 1px solid currentColor;
-  background: transparent;
-  color: inherit;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.mobile-menu-btn span {
-  width: 18px;
-  height: 2px;
-  border-radius: 999px;
-  background: currentColor;
-  transition: transform 0.22s ease, opacity 0.22s ease;
-}
-
-.site-navbar-open .mobile-menu-btn span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.site-navbar-open .mobile-menu-btn span:nth-child(2) {
-  opacity: 0;
-}
-
-.site-navbar-open .mobile-menu-btn span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
+.mobile-menu-toggle,
 .mobile-menu-panel {
   display: none;
 }
 
-/* Tablet sizing */
-@media (max-width: 1200px) {
-  .site-navbar {
-    gap: 20px;
-    padding: 0 3.5%;
+@media (max-width: 1180px) {
+  .navbar {
+    grid-template-columns: auto 1fr auto !important;
   }
 
-  .site-nav-links {
-    gap: 16px;
+  .nav-links,
+  .nav-actions {
+    display: none !important;
   }
 
-  .site-nav-link {
-    font-size: 0.82rem;
-  }
-
-  .site-logo {
-    font-size: 1.08rem;
-  }
-
-  .site-login,
-  .site-signup {
-    min-height: 36px;
-    padding: 0 14px;
-    font-size: 0.82rem;
-  }
-}
-
-/* Mobile navbar */
-@media (max-width: 920px) {
-  .site-navbar {
-    height: 66px;
-    grid-template-columns: auto 1fr auto;
-    padding: 0 18px;
-  }
-
-  .site-nav-links,
-  .site-nav-actions {
-    display: none;
-  }
-
-  .mobile-menu-btn {
-    display: inline-flex;
+  .mobile-menu-toggle {
+    display: inline-flex !important;
     justify-self: end;
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    border: 1px solid currentColor;
+    background: rgba(255,255,255,.08);
+    color: currentColor;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0;
+  }
+
+  .mobile-menu-toggle span {
+    width: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transition: transform .22s ease, opacity .22s ease;
+  }
+
+  .navbar-open .mobile-menu-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .navbar-open .mobile-menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-open .mobile-menu-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   .mobile-menu-panel {
     position: fixed;
-    top: 66px;
-    left: 14px;
-    right: 14px;
+    top: calc(var(--nav-h) + 10px);
+    left: 16px;
+    right: 16px;
     display: grid;
     gap: 18px;
     padding: 18px;
     border-radius: 22px;
     background: #ffffff;
-    color: var(--green-deep, #071b10);
-    box-shadow: 0 24px 70px rgba(8, 27, 16, 0.18);
-    border: 1px solid rgba(8, 27, 16, 0.08);
-    transform: translateY(-12px);
+    color: var(--green-950);
+    border: 1px solid rgba(7,23,13,.08);
+    box-shadow: 0 24px 70px rgba(7,23,13,.18);
+    transform: translateY(-14px);
     opacity: 0;
-    pointer-events: none;
     visibility: hidden;
-    transition:
-      transform 0.22s ease,
-      opacity 0.22s ease,
-      visibility 0.22s ease;
+    pointer-events: none;
+    transition: transform .22s ease, opacity .22s ease, visibility .22s ease;
   }
 
-  .site-navbar-open .mobile-menu-panel {
+  .navbar-open .mobile-menu-panel {
     transform: translateY(0);
     opacity: 1;
-    pointer-events: auto;
     visibility: visible;
+    pointer-events: auto;
   }
 
   .mobile-menu-links {
@@ -1343,22 +1224,21 @@ h3 { font-size: 20px; }
     gap: 4px;
   }
 
-  .mobile-menu-link {
+  .mobile-link {
+    min-height: 43px;
     display: flex;
     align-items: center;
-    min-height: 44px;
     padding: 0 12px;
     border-radius: 12px;
-    color: var(--green-deep, #071b10);
-    text-decoration: none;
+    font-size: 14px;
     font-weight: 800;
-    font-size: 0.96rem;
+    color: var(--green-950);
   }
 
-  .mobile-menu-link:hover,
-  .mobile-menu-link.active {
-    background: rgba(61, 220, 107, 0.12);
-    color: var(--green-mid, #176434);
+  .mobile-link:hover,
+  .mobile-link.active {
+    background: rgba(53,214,103,.14);
+    color: var(--green-700);
   }
 
   .mobile-menu-actions {
@@ -1366,7 +1246,7 @@ h3 { font-size: 20px; }
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding-top: 12px;
-    border-top: 1px solid rgba(8, 27, 16, 0.08);
+    border-top: 1px solid rgba(7,23,13,.08);
   }
 
   .mobile-login,
@@ -1376,36 +1256,199 @@ h3 { font-size: 20px; }
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    font-size: 13px;
     font-weight: 900;
-    text-decoration: none;
-    font-size: 0.9rem;
   }
 
   .mobile-login {
-    border: 1px solid rgba(8, 27, 16, 0.18);
-    color: var(--green-deep, #071b10);
+    border: 1px solid rgba(7,23,13,.16);
     background: #ffffff;
+    color: var(--green-950);
   }
 
   .mobile-signup {
-    border: 1px solid var(--green-accent, #3ddc6b);
-    color: var(--green-deep, #071b10);
-    background: var(--green-accent, #3ddc6b);
+    background: var(--green-500);
+    color: var(--green-950);
   }
 }
 
-@media (max-width: 420px) {
-  .site-logo {
-    font-size: 1rem;
+@media (max-width: 520px) {
+  .navbar {
+    padding: 0 14px !important;
   }
 
-  .site-logo-mark {
-    width: 24px;
-    height: 24px;
+  .brand {
+    font-size: 14px !important;
+    gap: 8px !important;
+  }
+
+  .brand-logo-img {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .mobile-menu-toggle {
+    width: 38px;
+    height: 38px;
   }
 
   .mobile-menu-panel {
     left: 10px;
     right: 10px;
+  }
+}
+
+/* ============================================================
+   LOGO DISPLAY FIX — transparent mark, no checkerboard/circle crop
+   ============================================================ */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: max-content;
+}
+
+.brand-logo-img {
+  width: 38px !important;
+  height: 38px !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  flex: 0 0 auto;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-logo-img {
+  width: 54px !important;
+  height: 54px !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  flex: 0 0 auto;
+}
+
+.footer-logo span,
+.brand span {
+  line-height: 1;
+}
+
+@media (max-width: 920px) {
+  .brand-logo-img {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .brand span {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-logo-img {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .brand span {
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================================
+   CLIENT BRAND ASSETS — final logo/contact/team-image update
+   ============================================================ */
+.brand-logo-img {
+  width: 42px !important;
+  height: 42px !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  flex: 0 0 auto !important;
+}
+
+.footer-logo-img {
+  width: 58px !important;
+  height: 58px !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  flex: 0 0 auto !important;
+}
+
+.footer-socials {
+  display: flex !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  margin-top: 20px !important;
+}
+
+.footer-socials a {
+  width: auto !important;
+  min-height: 36px !important;
+  height: 36px !important;
+  padding: 0 14px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: rgba(255,255,255,.84) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.footer-socials a:hover {
+  color: var(--green-500) !important;
+  border-color: rgba(53,214,103,.45) !important;
+}
+
+.contact-cards a {
+  color: inherit;
+  font-weight: 800;
+}
+
+.contact-cards a:hover {
+  color: var(--green-700);
+}
+
+.team-card img {
+  background: var(--green-950);
+  object-fit: cover;
+  object-position: center;
+}
+
+.team-card:hover img {
+  filter: grayscale(0) contrast(1.06) saturate(1.12) !important;
+  transform: scale(1.08) !important;
+}
+
+@media (max-width: 520px) {
+  .brand-logo-img {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .footer-logo-img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .footer-socials a {
+    width: 100% !important;
   }
 }

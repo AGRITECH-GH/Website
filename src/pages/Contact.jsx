@@ -27,7 +27,7 @@ function Contact() {
         </div>
         <div className="contact-info-panel">
           <div className="map-panel"><div className="map-grid"><span></span><span></span><span></span><span></span></div><div className="map-pin"><Icon name="location" /></div></div>
-          <div className="contact-cards"><article><Icon name="location" /><h3>Office Address</h3><p>Independence Avenue, Ridge, Accra, Ghana</p></article><article><Icon name="phone" /><h3>Direct Contact</h3><p>+233 24 500 0000<br />hello@agriconnect.io</p></article></div>
+          <div className="contact-cards"><article><Icon name="location" /><h3>Office Address</h3><p>Independence Avenue, Ridge, Accra, Ghana</p></article><article><Icon name="phone" /><h3>Direct Contact</h3><p><a href="tel:+233537333237">0537333237</a><br />hello@agritechghana.com</p></article></div>
         </div>
       </section>
       <section className="section muted-section"><div className="section-center"><span className="eyebrow">Presence</span><h2>Our global presence</h2><p>Bridging Ghanaian expertise with global agritech standards.</p></div><div className="stats-grid"><div><strong>500+</strong><span>Active farms</span></div><div><strong>10k</strong><span>Tons harvested</span></div><div><strong>12</strong><span>Hub regions</span></div><div><strong>98%</strong><span>Client success</span></div></div></section>

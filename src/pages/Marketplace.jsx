@@ -14,7 +14,7 @@ function Marketplace() {
         <div className="page-hero-copy">
           <span className="badge">Trusted Trade</span>
           <h1>A smarter marketplace for <span>agricultural supply</span></h1>
-          <p>AgriConnect helps farmers, agents, buyers, and logistics partners trade with better visibility, verification, and confidence.</p>
+          <p>AgriTech Ghana helps farmers, agents, buyers, and logistics partners trade with better visibility, verification, and confidence.</p>
           <div className="action-row"><a href="/contact" className="btn btn-primary">Request Access</a><a href="/solutions" className="btn btn-light">View Services</a></div>
         </div>
         <div className="market-dashboard-card">
@@ -30,7 +30,7 @@ function Marketplace() {
         <div className="card-grid four compact-cards">{marketSegments.map((item) => <article key={item.title}><Icon name={item.icon} /><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
       </section>
       <section className="section split-feature">
-        <div><span className="eyebrow">Value Chains</span><h2>Start focused. Scale intelligently.</h2><p>AgriConnect can begin with priority value chains such as maize, cashew, cocoa, and livestock, then expand into additional commodities as partner networks mature.</p></div>
+        <div><span className="eyebrow">Value Chains</span><h2>Start focused. Scale intelligently.</h2><p>AgriTech Ghana can begin with priority value chains such as maize, cashew, cocoa, and livestock, then expand into additional commodities as partner networks mature.</p></div>
         <div className="value-chain-list"><span>Maize</span><span>Cashew</span><span>Cocoa</span><span>Livestock</span><span>Vegetables</span><span>Staple crops</span></div>
       </section>
     </>
