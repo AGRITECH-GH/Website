@@ -12,29 +12,6 @@ import FAQ from "./pages/FAQ";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
-function AuthPlaceholder({ title, copy }) {
-  return (
-    <section className="auth-shell page-offset">
-      <div className="auth-card">
-        <span className="eyebrow">Account Access</span>
-        <h1>{title}</h1>
-        <p>{copy}</p>
-        <form className="auth-form">
-          <label>
-            Email Address
-            <input type="email" placeholder="name@example.com" />
-          </label>
-          <label>
-            Password
-            <input type="password" placeholder="Enter your password" />
-          </label>
-          <button className="btn btn-primary" type="button">Continue</button>
-        </form>
-      </div>
-    </section>
-  );
-}
-
 function NotFound() {
   return (
     <section className="not-found page-offset">
@@ -63,8 +40,6 @@ function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<AuthPlaceholder title="Welcome back" copy="Sign in to continue exploring the AgriTech Ghana platform." />} />
-          <Route path="/signup" element={<AuthPlaceholder title="Create your AgriTech Ghana account" copy="Join the platform connecting agriculture, technology, markets, and climate-smart growth." />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
