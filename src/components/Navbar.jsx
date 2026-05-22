@@ -57,10 +57,6 @@ function Navbar() {
         ))}
       </nav>
 
-      <div className="nav-actions">
-        <NavLink to="/login" className="btn-login">Login</NavLink>
-        <NavLink to="/signup" className="btn-signup">Sign Up</NavLink>
-      </div>
 
       <button
         type="button"
@@ -86,10 +82,6 @@ function Navbar() {
             </NavLink>
           ))}
         </nav>
-        <div className="mobile-menu-actions">
-          <NavLink to="/login" className="mobile-login">Login</NavLink>
-          <NavLink to="/signup" className="mobile-signup">Sign Up</NavLink>
-        </div>
       </div>
     </header>
   );
