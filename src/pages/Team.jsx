@@ -1,3 +1,4 @@
+import { useSEO } from "../hooks/useSEO";
 import Icon from "../components/Icon";
 
 import abigail from "../assets/team/abigail-thorpe.jpeg";
@@ -59,6 +60,11 @@ const team = [
 ];
 
 function Team() {
+  useSEO({
+    title: "Our Team — AgriTech Ghana",
+    description: "Meet the people building AgriTech Ghana's platform for sustainable food systems."
+  });
+
   return (
     <>
       <section className="simple-hero page-offset dark-section">
@@ -74,7 +80,7 @@ function Team() {
         <div className="team-grid">
           {team.map((member) => (
             <article className="team-card" key={member.name}>
-              <img src={member.img} alt={member.name} />
+              <img src={member.img} alt={member.name} / fetchpriority="high" />
 
               <h3>{member.name}</h3>
               <span>{member.role}</span>

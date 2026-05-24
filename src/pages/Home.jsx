@@ -1,4 +1,5 @@
 import Icon from "../components/Icon";
+import { useSEO } from "../hooks/useSEO";
 
 const stakeholderCards = [
   {
@@ -35,11 +36,16 @@ const chainSteps = [
 ];
 
 function Home() {
+  useSEO({
+    title: "AgriTech Ghana — Smarter Farming, Better Futures",
+    description: "Connecting Ghana's farmers, agents and buyers through digital traceability, advisory and fair-trade tools."
+  });
+
   return (
     <>
       <section className="hero-section home-hero">
         <div className="hero-media" aria-hidden="true">
-          <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2200&q=85" alt="" />
+          <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2200&q=85" alt="" fetchpriority="high" width="2200" height="1466" />
           <div className="hero-overlay" />
         </div>
         <div className="hero-content centered">
@@ -64,7 +70,7 @@ function Home() {
         <div className="card-grid three">
           {stakeholderCards.map((card) => (
             <article className="image-card" key={card.title}>
-              <img src={card.image} alt={card.title} />
+              <img src={card.image} alt={card.title} loading="lazy" width="900" height="600" />
               <div className="image-card-body">
                 <span className="icon-tile"><Icon name={card.icon} /></span>
                 <h3>{card.title}</h3>
@@ -93,7 +99,7 @@ function Home() {
           </div>
         </div>
         <div className="visual-card image-visual">
-          <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1000&q=85" alt="Farmer using smart agriculture technology" />
+          <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1000&q=85" alt="Farmer using smart agriculture technology" loading="lazy" width="1000" height="666" />
           <div className="floating-panel image-floating-panel">
             <strong>Smart Irrigation</strong>
             <span>Reduce water waste using timely field intelligence.</span>
@@ -127,9 +133,9 @@ function Home() {
           <a href="/impact" className="btn btn-primary">Read Impact Report</a>
         </div>
         <div className="photo-mosaic">
-          <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=500&q=80" alt="Seedling" />
-          <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=500&q=80" alt="Vegetables" />
-          <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=500&q=80" alt="Farm field" />
+          <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=500&q=80" alt="Seedling" loading="lazy" width="500" height="750" />
+          <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=500&q=80" alt="Vegetables" loading="lazy" width="500" height="333" />
+          <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=500&q=80" alt="Farm field" loading="lazy" width="500" height="333" />
         </div>
       </section>
 

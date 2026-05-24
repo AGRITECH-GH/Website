@@ -1,3 +1,4 @@
+import { useSEO } from "../hooks/useSEO";
 import Icon from "../components/Icon";
 
 const marketSegments = [
@@ -8,6 +9,11 @@ const marketSegments = [
 ];
 
 function Marketplace() {
+  useSEO({
+    title: "Marketplace — AgriTech Ghana",
+    description: "Browse verified produce, connect with trusted farmer networks and source with confidence."
+  });
+
   return (
     <>
       <section className="page-hero dark-hero page-offset">

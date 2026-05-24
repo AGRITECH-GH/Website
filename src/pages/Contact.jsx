@@ -1,7 +1,13 @@
+import { useSEO } from "../hooks/useSEO";
 import { useState } from "react";
 import Icon from "../components/Icon";
 
 function Contact() {
+  useSEO({
+    title: "Contact Us — AgriTech Ghana",
+    description: "Get in touch with the AgriTech Ghana team for partnerships, support or media enquiries."
+  });
+
   const [form, setForm] = useState({ name: "", email: "", organisation: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });

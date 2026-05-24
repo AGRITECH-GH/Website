@@ -1,3 +1,4 @@
+import { useSEO } from "../hooks/useSEO";
 import Icon from "../components/Icon";
 
 const metrics = [
@@ -14,10 +15,15 @@ const impactPillars = [
 ];
 
 function Impact() {
+  useSEO({
+    title: "Our Impact — AgriTech Ghana",
+    description: "See how AgriTech Ghana is empowering 50,000+ smallholder farmers across Ghana."
+  });
+
   return (
     <>
       <section className="page-hero image-hero page-offset">
-        <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1800&q=80" alt="Young crops" />
+        <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1800&q=80" alt="Young crops" / fetchpriority="high" />
         <div className="hero-overlay" />
         <div className="page-hero-copy floating-copy">
           <span className="badge">Sustainability First</span>

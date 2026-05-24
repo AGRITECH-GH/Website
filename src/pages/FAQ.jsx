@@ -1,3 +1,4 @@
+import { useSEO } from "../hooks/useSEO";
 import { useState } from "react";
 import Icon from "../components/Icon";
 
@@ -20,6 +21,11 @@ function FaqItem({ question }) {
 }
 
 function FAQ() {
+  useSEO({
+    title: "FAQs — AgriTech Ghana",
+    description: "Frequently asked questions about the AgriTech Ghana platform and services."
+  });
+
   const [active, setActive] = useState(groups[0].id);
   const activeGroup = groups.find((g) => g.id === active) || groups[0];
   return (
