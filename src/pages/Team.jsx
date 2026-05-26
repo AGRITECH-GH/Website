@@ -80,7 +80,7 @@ function Team() {
         <div className="team-grid">
           {team.map((member) => (
             <article className="team-card" key={member.name}>
-              <img src={member.img} alt={member.name} / fetchpriority="high" />
+              <img src={member.img} alt={member.name} fetchpriority="high" />
 
               <h3>{member.name}</h3>
               <span>{member.role}</span>

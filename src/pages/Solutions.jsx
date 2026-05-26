@@ -33,7 +33,7 @@ function Solutions() {
           </div>
         </div>
         <div className="hero-image-card">
-          <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=80" alt="Farmer using tablet" / fetchpriority="high" />
+          <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=80" alt="Farmer using tablet" fetchpriority="high" />
           <div className="stat-badge"><strong>45%</strong><span>Average yield improvement target</span></div>
         </div>
       </section>

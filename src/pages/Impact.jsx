@@ -23,7 +23,7 @@ function Impact() {
   return (
     <>
       <section className="page-hero image-hero page-offset">
-        <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1800&q=80" alt="Young crops" / fetchpriority="high" />
+        <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1800&q=80" alt="Young crops" fetchpriority="high" />
         <div className="hero-overlay" />
         <div className="page-hero-copy floating-copy">
           <span className="badge">Sustainability First</span>
