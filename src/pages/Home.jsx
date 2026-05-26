@@ -53,8 +53,7 @@ function Home() {
           <h1>The Future<br />of <span>Farming</span></h1>
           <p>Revolutionizing agriculture through smart technology and sustainable practices for a greener, more productive tomorrow.</p>
           <div className="action-row centered-actions">
-            <a href="/signup" className="btn btn-primary">Get Started</a>
-            <a href="/solutions" className="btn btn-light">View Platform Demo</a>
+            <a href="/solutions" className="btn btn-primary">View Platform Demo</a>
           </div>
         </div>
       </section>
@@ -157,8 +156,7 @@ function Home() {
           <h2>Ready to cultivate your future?</h2>
           <p>Join forward-thinking agricultural professionals building more resilient food systems.</p>
           <div className="action-row centered-actions">
-            <a href="/signup" className="btn btn-primary">Create Account</a>
-            <a href="/contact" className="btn btn-dark-outline">Contact Sales</a>
+            <a href="/contact" className="btn btn-primary">Contact Sales</a>
           </div>
         </div>
       </section>
