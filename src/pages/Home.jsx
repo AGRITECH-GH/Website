@@ -54,7 +54,7 @@ function Home() {
           <p>Revolutionizing agriculture through smart technology and sustainable practices for a greener, more productive tomorrow.</p>
           <div className="action-row centered-actions">
             <a href="/signup" className="btn btn-primary">Get Started</a>
-            <a href="/solutions" className="btn btn-light">View Demo</a>
+            <a href="/solutions" className="btn btn-light">View Platform Demo</a>
           </div>
         </div>
       </section>
@@ -75,7 +75,7 @@ function Home() {
                 <span className="icon-tile"><Icon name={card.icon} /></span>
                 <h3>{card.title}</h3>
                 <p>{card.text}</p>
-                <a href="/solutions" className="text-link">Learn More <Icon name="arrow" size={16} /></a>
+                <a href="/solutions" className="text-link">Explore Solutions <Icon name="arrow" size={16} /></a>
               </div>
             </article>
           ))}
@@ -91,7 +91,7 @@ function Home() {
               <div className="feature-row" key={item.title}>
                 <span className="icon-tile"><Icon name={item.icon} /></span>
                 <div>
-                  <h4>{item.title}</h4>
+                  <h3>{item.title}</h3>
                   <p>{item.text}</p>
                 </div>
               </div>

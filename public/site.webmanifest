@@ -1,6 +1,8 @@
 {
   "name": "AgriTech Ghana",
   "short_name": "AgriTech",
+  "description": "Connecting Ghana's farmers, agents and buyers through digital traceability, advisory and fair-trade tools.",
+  "start_url": "/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

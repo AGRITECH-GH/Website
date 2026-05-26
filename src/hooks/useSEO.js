@@ -22,5 +22,22 @@ export function useSEO({ title, description }) {
       const ogDescription = document.querySelector('meta[property="og:description"]');
       if (ogDescription) ogDescription.setAttribute('content', description);
     }
+    
+    // Manage Canonical URL and og:url
+    const currentUrl = window.location.href;
+    
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.rel = 'canonical';
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.href = currentUrl;
+    
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.setAttribute('content', currentUrl);
+    }
+    
   }, [title, description]);
 }
